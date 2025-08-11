@@ -66,7 +66,7 @@ async function generateChatSVG() {
         </foreignObject>`
     );
     
-    const imgRegex = /<img src="([^"]+)"/g;
+    const imgRegex = /<img[^>]+src="([^"]+)"[^>]*>/g;
     const matches = [...data.matchAll(imgRegex)];
 
     for (const match of matches) {
@@ -74,7 +74,7 @@ async function generateChatSVG() {
         console.log(`Processing ${originalUrl}...`);
         const base64Url = await imageToBase64(originalUrl);
         if (base64Url) {
-            data = data.replace(match[0], `<img src="${base64Url}"`);
+            data = data.replace(match[0], match[0].replace(match[1], base64Url));
         }
     }
 
