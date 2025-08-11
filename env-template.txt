@@ -1,0 +1,9 @@
+# Copy this file to .env and fill in your actual values
+
+# AccuWeather API Configuration (Primary - More Accurate)
+# Get your free API key from: https://developer.accuweather.com/
+# This is optional - the system will fallback to Open-Meteo if not provided
+ACCUWEATHER_API_KEY=your_accuweather_api_key_here
+
+# Location is pre-configured for Bellevue, WA in weather.config.json
+# No additional environment variables needed for location 

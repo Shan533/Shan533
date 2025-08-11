@@ -1,42 +1,6 @@
-const WEATHER_API_KEY = process.env.WEATHER_API_KEY
-
 import fs from 'fs'
-import got from 'got'
-import Qty from 'js-quantities/esm'
 import { formatDistance } from 'date-fns'
-
-let WEATHER_DOMAIN = 'http://dataservice.accuweather.com'
-
-const emojis = {
-  1: '☀️',
-  2: '☀️',
-  3: '🌤',
-  4: '🌤',
-  5: '🌤',
-  6: '🌥',
-  7: '☁️',
-  8: '☁️',
-  11: '🌫',
-  12: '🌧',
-  13: '🌦',
-  14: '🌦',
-  15: '⛈',
-  16: '⛈',
-  17: '🌦',
-  18: '🌧',
-  19: '🌨',
-  20: '🌨',
-  21: '🌨',
-  22: '❄️',
-  23: '❄️',
-  24: '🌧',
-  25: '🌧',
-  26: '🌧',
-  29: '🌧',
-  30: '🥵',
-  31: '🥶',
-  32: '💨',
-}
+import { getLiveWeatherSummary } from './weather.js'
 
 // Cheap, janky way to have variable bubble width
 const dayBubbleWidths = {
@@ -49,49 +13,58 @@ const dayBubbleWidths = {
   Sunday: 230,
 }
 
-// Time working at PlanetScale
+// Time working at current company (you can adjust this date)
 const today = new Date()
 const todayDay = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(
   today
 )
 
-const psTime = formatDistance(new Date(2020, 12, 14), today, {
+// Calculate work time - adjust this date to when Shanshan started working
+const workStartDate = new Date(2020, 12, 14) // December 14, 2020 - adjust as needed
+const workTime = formatDistance(workStartDate, today, {
   addSuffix: false,
 })
 
-// Today's weather
-const locationKey = '18363_PC'
-let url = `forecasts/v1/daily/1day/${locationKey}?apikey=${WEATHER_API_KEY}`
-
-got(url, { prefixUrl: WEATHER_DOMAIN })
-  .then((response) => {
-    let json = JSON.parse(response.body)
-
-    const degF = Math.round(json.DailyForecasts[0].Temperature.Maximum.Value)
-    const degC = Math.round(Qty(`${degF} tempF`).to('tempC').scalar)
-    const icon = json.DailyForecasts[0].Day.Icon
+// Generate SVG with live weather data
+async function generateChatSVG() {
+  try {
+    console.log('Fetching live weather data for Bellevue, WA...')
+    const weather = await getLiveWeatherSummary()
+    
+    console.log(`Weather retrieved from: ${weather.source}`)
+    console.log(`Temperature: ${weather.degF}°F (${weather.degC}°C)`)
+    console.log(`Conditions: ${weather.description} ${weather.weatherEmoji}`)
+    console.log(`Location: ${weather.location}`)
 
     fs.readFile('template.svg', 'utf-8', (error, data) => {
       if (error) {
+        console.error('Error reading template.svg:', error)
         return
       }
 
-      data = data.replace('{degF}', degF)
-      data = data.replace('{degC}', degC)
-      data = data.replace('{weatherEmoji}', emojis[icon])
-      data = data.replace('{psTime}', psTime)
+      // Replace template placeholders with actual data
+      data = data.replace('{degF}', weather.degF)
+      data = data.replace('{degC}', weather.degC)
+      data = data.replace('{weatherEmoji}', weather.weatherEmoji)
+      data = data.replace('{psTime}', workTime)
       data = data.replace('{todayDay}', todayDay)
       data = data.replace('{dayBubbleWidth}', dayBubbleWidths[todayDay])
 
-      data = fs.writeFile('chat.svg', data, (err) => {
+      fs.writeFile('chat.svg', data, (err) => {
         if (err) {
-          console.error(err)
+          console.error('Error writing chat.svg:', err)
           return
         }
+        console.log('✅ chat.svg updated successfully!')
+        console.log(`📍 Weather for ${weather.location}`)
+        console.log(`🌡️  ${weather.degF}°F (${weather.degC}°C)`)
+        console.log(`${weather.weatherEmoji} ${weather.description}`)
       })
     })
-  })
-  .catch((err) => {
-    // TODO: something better
-    console.log(err)
-  })
+  } catch (error) {
+    console.error('Error generating chat SVG:', error)
+  }
+}
+
+// Run the generator
+generateChatSVG()
