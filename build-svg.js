@@ -61,7 +61,7 @@ async function generateChatSVG() {
       '<!-- Add a dynamic update of my github status-->',
       `<foreignObject x="15" y="40" width="426" height="200">
           <body xmlns="http://www.w3.org/1999/xhtml">
-            <img src="https://github-readme-stats.vercel.app/api?username=Shan533&amp;show_icons=true&amp;theme=radical" alt="Shan533's GitHub stats"/>
+            <img src="https://github-readme-stats.vercel.app/api?username=Shan533&amp;show_icons=true&amp;theme=radical&amp;disable_animations=true" alt="Shan533's GitHub stats"/>
           </body>
         </foreignObject>`
     );
