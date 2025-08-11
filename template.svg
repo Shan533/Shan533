@@ -332,13 +332,8 @@
             </body>
             
         </foreignObject>
-        <!--Most used languages-->
-        <foreignObject x="0" y="222" width="430" height="185">
-            <body xmlns="http://www.w3.org/1999/xhtml" style="margin: 0; text-align: center;">
-                
-                <img align="left" src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs?username=shan533&amp;show_icons=true&amp;locale=en&amp;layout=compact&amp;theme=transparent&amp;disable_animations=true" alt="shan533" />
-            </body>
-        </foreignObject>
+        <rect class="bubble"  y="222" width="340" height="140" rx="15"/>
+        <!-- GitHub language stats will be embedded here -->
   </g>
 
 

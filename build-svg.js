@@ -133,14 +133,15 @@ async function generateChatSVG() {
     );
 
     // Replace the language stats placeholder with native SVG
-    const languageStatsSVG = await fetchGitHubStatsSVG('https://github-readme-stats.vercel.app/api/top-langs?username=shan533&show_icons=true&locale=en&layout=compact&theme=transparent&disable_animations=true&hide_border=true');
-    
+    const languageStatsSVG = await fetchGitHubStatsSVG('https://github-readme-stats.vercel.app/api/top-langs?username=shan533&show_icons=true&locale=en&layout=compact&theme=transparent&disable_animations=true&hide_border=true&langs_count=6');
+
     if (languageStatsSVG) {
       data = data.replace(
         '<!-- GitHub language stats will be embedded here -->',
-        `<g transform="translate(0,220)" class="gh-stats">
-           <rect width="340" height="170" rx="15" class="bubble" />
-           ${languageStatsSVG}
+        `<g transform="translate(0,192)" class="gh-stats">
+           <g transform="translate(0, 18)">
+             ${languageStatsSVG}
+           </g>
          </g>`
       );
     }
