@@ -1,1 +1,1 @@
-[![](https://raw.githubusercontent.com/Shan533/Shan533/main/chat.svg)](shanshan533wu@gmail.com)
+[![](https://raw.githubusercontent.com/Shan533/Shan533/main/chat.svg)](www.linkedin.com/in/shanshan533wu)
