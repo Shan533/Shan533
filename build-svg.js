@@ -43,6 +43,20 @@ async function generateChatSVG() {
       }
 
       // Replace template placeholders with actual data
+      data = data.replace(
+        '<rect width="456" height="92" rx="18" class="bubble" />',
+        '<rect width="456" height="230" rx="18" class="bubble" />'
+      );
+      
+      data = data.replace(
+        '<!-- Add a dynamic update of my github status-->',
+        `<foreignObject x="15" y="40" width="426" height="200">
+          <body xmlns="http://www.w3.org/1999/xhtml">
+            <img src="https://github-readme-stats.vercel.app/api?username=Shan533&amp;show_icons=true&amp;theme=radical" alt="Shan533's GitHub stats"/>
+          </body>
+        </foreignObject>`
+      );
+
       data = data.replace('{degF}', weather.degF)
       data = data.replace('{degC}', weather.degC)
       data = data.replace('{weatherEmoji}', weather.weatherEmoji)
