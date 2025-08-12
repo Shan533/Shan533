@@ -14,9 +14,8 @@ const dayBubbleWidths = {
   Sunday: 235,
 };
 
-// Time working at current company (you can adjust this date)
 const today = new Date()
-const todayDay = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(
+const todayDay = new Intl.DateTimeFormat('en-US', { weekday: 'long', timeZone: 'America/Los_Angeles' }).format(
   today
 )
 
@@ -172,7 +171,8 @@ async function generateChatSVG() {
     console.log('✅ chat.svg updated successfully!');
     console.log(`📍 Weather for ${weather.location}`);
     console.log(`🌡️  ${weather.degF}°F (${weather.degC}°C)`);
-    console.log(`${weather.weatherEmoji} ${weather.description}`);
+    console.log(`${weather.weatherEmoji}  ${weather.description}`);
+    console.log(`👋 ${todayDay}`);
 
   } catch (error) {
     console.error('Error generating chat SVG:', error);
