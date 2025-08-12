@@ -3,7 +3,7 @@ name: Update Chat SVG with Live Weather
 on:
   schedule:
     # Run every 30 minutes
-    - cron: '*/30 * * * *'
+    - cron: '*/50 * * * *'
   workflow_dispatch: # Allow manual trigger
   push:
     branches: [ main ]
