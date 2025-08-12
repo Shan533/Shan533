@@ -14,6 +14,17 @@ const dayBubbleWidths = {
   Sunday: 235,
 };
 
+// Different emojis for different days of the week
+const dayEmojis = {
+  Monday: '⏰',
+  Tuesday: '💡',
+  Wednesday: '☕️',
+  Thursday: '🚀',
+  Friday: '🎉',
+  Saturday: '🍻',
+  Sunday: '🧘',
+};
+
 const today = new Date()
 const todayDay = new Intl.DateTimeFormat('en-US', { weekday: 'long', timeZone: 'America/Los_Angeles' }).format(
   today
@@ -158,6 +169,7 @@ async function generateChatSVG() {
     data = data.replace(/\{weatherEmoji\|.*?\}/g, weather.weatherEmoji);
     data = data.replace(/\{todayDay\|.*?\}/g, todayDay);
     data = data.replace(/\{dayBubbleWidth\|.*?\}/g, dayBubbleWidths[todayDay]);
+    data = data.replace(/\{todayEmoji\|.*?\}/g, dayEmojis[todayDay]);
     
     // Fallback: replace any remaining simple placeholders without defaults
     data = data.replace('{degF}', weather.degF);
@@ -165,6 +177,7 @@ async function generateChatSVG() {
     data = data.replace('{weatherEmoji}', weather.weatherEmoji);
     data = data.replace('{todayDay}', todayDay);
     data = data.replace('{dayBubbleWidth}', dayBubbleWidths[todayDay]);
+    data = data.replace('{todayEmoji}', dayEmojis[todayDay]);
 
     await fs.writeFile('chat.svg', data);
     
