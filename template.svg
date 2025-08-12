@@ -249,8 +249,8 @@
 
   <!-- Hi, I'm Shanshan -->
   <g transform="translate(10, 0)" class="msg-1 bubble">
-    <rect width="170" height="42" rx="18" />
-    <text x="15" y="27">Hi, I'm Shanshan</text>
+    <rect width="184" height="42" rx="18" />
+    <text x="15" y="27">Hi, I'm Shanshan 👋</text>
   </g>
 
   <!-- typing 2 -->
@@ -274,6 +274,7 @@
   <g transform="translate(10, 48)" class="msg-2">
     <rect width="439" height="66" rx="18" class="bubble" />
     <text x="15" y="27">I live in Bellevue, WA where it's supposed to be</text>
+    <!--TODO: update emoji here-->
     <text x="15" y="50">91° F (33° C) and <tspan class="emoji">☀️</tspan> today.</text>
   </g>
 
@@ -380,9 +381,10 @@
     </circle>
   </g>
 
-  <!-- Have a great... -->
+  <!-- greeting... -->
   <g transform="translate(10, 632)" class="msg-6">
     <rect width="235" height="42" rx="18" class="bubble" />
-    <text x="15" y="27">Have a great Monday! <tspan class="emoji">✌🏻</tspan></text>  
+    <!--TODO: update the date-->
+    <text x="15" y="27">Have a great Monday! <tspan class="emoji">🩵</tspan></text>  
   </g>
 </svg>
