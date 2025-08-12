@@ -9,9 +9,9 @@ const dayBubbleWidths = {
   Tuesday: 235,
   Wednesday: 260,
   Thursday: 245,
-  Friday: 220,
-  Saturday: 245,
-  Sunday: 230,
+  Friday: 235,
+  Saturday: 260,
+  Sunday: 235,
 };
 
 // Time working at current company (you can adjust this date)
@@ -21,7 +21,7 @@ const todayDay = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(
 )
 
 // Calculate work time - adjust this date to when Shanshan started working
-const workStartDate = new Date(2020, 12, 14) // December 14, 2020 - adjust as needed
+const workStartDate = new Date(2020, 11, 14) // December 14, 2020 - adjust as needed
 const workTime = formatDistance(workStartDate, today, {
   addSuffix: false,
 })
@@ -159,11 +159,20 @@ async function generateChatSVG() {
         }
     }
 
+    // Replace placeholders with actual values (including default fallbacks)
+    data = data.replace(/\{degF\|.*?\}/g, weather.degF);
+    data = data.replace(/\{degC\|.*?\}/g, weather.degC);
+    data = data.replace(/\{weatherEmoji\|.*?\}/g, weather.weatherEmoji);
+    data = data.replace(/\{todayDay\|.*?\}/g, todayDay);
+    data = data.replace(/\{dayBubbleWidth\|.*?\}/g, dayBubbleWidths[todayDay]);
+    
+    // Fallback: replace any remaining simple placeholders without defaults
     data = data.replace('{degF}', weather.degF);
     data = data.replace('{degC}', weather.degC);
     data = data.replace('{weatherEmoji}', weather.weatherEmoji);
-    data = data.replace('{psTime}', workTime);
+    data = data.replace('{todayDay}', todayDay);
     data = data.replace('{dayBubbleWidth}', dayBubbleWidths[todayDay]);
+    data = data.replace('{psTime}', workTime);
 
     await fs.writeFile('chat.svg', data);
     
