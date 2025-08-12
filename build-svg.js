@@ -20,12 +20,6 @@ const todayDay = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(
   today
 )
 
-// Calculate work time - adjust this date to when Shanshan started working
-const workStartDate = new Date(2020, 11, 14) // December 14, 2020 - adjust as needed
-const workTime = formatDistance(workStartDate, today, {
-  addSuffix: false,
-})
-
 async function fetchGitHubStatsSVG(url) {
   try {
     console.log(`Fetching GitHub stats from: ${url}`);
@@ -172,7 +166,6 @@ async function generateChatSVG() {
     data = data.replace('{weatherEmoji}', weather.weatherEmoji);
     data = data.replace('{todayDay}', todayDay);
     data = data.replace('{dayBubbleWidth}', dayBubbleWidths[todayDay]);
-    data = data.replace('{psTime}', workTime);
 
     await fs.writeFile('chat.svg', data);
     
