@@ -163,7 +163,6 @@ async function generateChatSVG() {
     data = data.replace('{degC}', weather.degC);
     data = data.replace('{weatherEmoji}', weather.weatherEmoji);
     data = data.replace('{psTime}', workTime);
-    data = data.replace('{todayDay}', todayDay);
     data = data.replace('{dayBubbleWidth}', dayBubbleWidths[todayDay]);
 
     await fs.writeFile('chat.svg', data);
