@@ -2,8 +2,8 @@ name: Update Chat SVG with Live Weather
 
 on:
   schedule:
-    # Run every 30 minutes
-    - cron: '*/50 * * * *'
+    # Run every 60 minutes
+    - cron: '0 * * * *'
   workflow_dispatch: # Allow manual trigger
   push:
     branches: [ main ]
@@ -49,8 +49,8 @@ jobs:
       - name: Commit and push changes
         if: steps.verify-changed-files.outputs.changed == 'true'
         run: |
-          git config --local user.email "shanshan533wu@gmail.com"
-          git config --local user.name "Shanshan"
+          git config --local user.email "96012342+Shan533@users.noreply.github.com"
+          git config --local user.name "Shan533"
           git add chat.svg
           git commit -m "🌤️ Update weather data for Bellevue, WA - $(date '+%Y-%m-%d %H:%M:%S UTC')"
           git push
