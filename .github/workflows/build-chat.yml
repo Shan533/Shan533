@@ -49,10 +49,10 @@ jobs:
       - name: Commit and push changes
         if: steps.verify-changed-files.outputs.changed == 'true'
         run: |
-          git config --local user.email "96012342+Shan533@users.noreply.github.com"
-          git config --local user.name "Shan533"
+          git config --global user.email "96012342+Shan533@users.noreply.github.com"
+          git config --global user.name "Shan533"
           git add chat.svg
-          git commit -m "🌤️ Update weather data for Bellevue, WA - $(date '+%Y-%m-%d %H:%M:%S UTC')"
+          git commit --author="Shan533 <96012342+Shan533@users.noreply.github.com>" -m "🌤️ Update weather data for Bellevue, WA - $(date '+%Y-%m-%d %H:%M:%S UTC')"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
