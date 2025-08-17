@@ -13,6 +13,8 @@ on:
       - 'weather.config.json'
       - 'template.svg'
       - 'package.json'
+      - 'index.html'
+      - 'README.md'
       - '.github/workflows/build-chat.yml'
 
 jobs:

@@ -137,7 +137,9 @@ async function generateChatSVG() {
     );
 
     // Replace the language stats placeholder with native SVG
-    const languageStatsSVG = await fetchGitHubStatsSVG('https://github-readme-stats.vercel.app/api/top-langs?username=shan533&show_icons=true&locale=en&layout=compact&theme=transparent&disable_animations=true&hide_border=true&langs_count=6');
+    // Add cache busting parameter to ensure fresh data
+    const timestamp = Date.now();
+    const languageStatsSVG = await fetchGitHubStatsSVG(`https://github-readme-stats.vercel.app/api/top-langs?username=shan533&show_icons=true&locale=en&layout=compact&theme=transparent&disable_animations=true&hide_border=true&langs_count=6&cache_seconds=1800&_=${timestamp}`);
 
     if (languageStatsSVG) {
       data = data.replace(
