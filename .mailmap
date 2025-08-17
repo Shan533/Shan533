@@ -1,0 +1,11 @@
+# Mailmap file to standardize author information
+# Format: Proper Name <proper@email.xx> <commit@email.xx>
+
+# Map all Shanshan variations to the GitHub identity
+Shan533 <96012342+Shan533@users.noreply.github.com> Shanshan <shanshan533wu@gmail.com>
+Shan533 <96012342+Shan533@users.noreply.github.com> Shanshan Wu <790219068@qq.com>
+
+# Keep other contributors as-is (no mapping needed for them)
+# dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+# Jason Long <jason@jasonlong.me>
+# Jason Long <jlong@github.com>
