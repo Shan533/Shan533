@@ -4,6 +4,16 @@ on:
   schedule:
     - cron: "0 4 * * *"
   workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'build-svg.js'
+      - 'weather.js'
+      - 'weather.config.json'
+      - 'template.svg'
+      - 'README.md'
+      - 'package.json'
+      - 'index.html'
 
 jobs:
   readme:

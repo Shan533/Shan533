@@ -12,6 +12,8 @@ on:
       - 'weather.js'
       - 'weather.config.json'
       - 'template.svg'
+      - 'package.json'
+      - '.github/workflows/build-chat.yml'
 
 jobs:
   update-weather:
