@@ -10,24 +10,35 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - run: npm install
+          node-version: '18'
+          cache: 'npm'
+      - run: npm ci
 
       - name: Generate readme
         env:
-          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+          ACCUWEATHER_API_KEY: ${{ secrets.ACCUWEATHER_API_KEY }}
         run: node build-svg.js
 
+      - name: Check for changes
+        id: verify-changed-files
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Commit changes
-        uses: EndBug/add-and-commit@v4
-        with:
-          author_name: Shanshan
-          author_email: 96012342+Shan533@users.noreply.github.com
-          message: "Auto updating my readme"
-          add: "*.svg"
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        run: |
+          git config --global user.email "96012342+Shan533@users.noreply.github.com"
+          git config --global user.name "Shan533"
+          git add *.svg
+          git commit --author="Shan533 <96012342+Shan533@users.noreply.github.com>" -m "📄 Auto updating readme - $(date '+%Y-%m-%d %H:%M:%S UTC')"
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
