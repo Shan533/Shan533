@@ -1,4 +1,4 @@
-name: Update Chat SVG with Live Weather
+name: Update Chat SVG with Updated Info
 
 on:
   schedule:
