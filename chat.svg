@@ -19,56 +19,56 @@
 
     .typing-1 {
       opacity: 0;
-      animation: fade-in-out 1.5s;
+      animation: fade-in-out 0.9s;
     }
 
     .msg-1 {
-      animation: wait 1.7s, msg-1 0.2s 1.7s;
+      animation: wait 1.19s, msg-1 0.2s 1.19s;
     }
 
     .typing-2 {
       opacity: 0;
-      animation: wait 2.5s, fade-in-out 1.5s 2.5s;
+      animation: wait 1.75s, fade-in-out 0.9s 1.75s;
     }
 
     .msg-2 {
-      animation: wait 4.2s, msg-2 0.2s 4.2s;
+      animation: wait 2.94s, msg-2 0.2s 2.94s;
     }
 
     .typing-3 {
       opacity: 0;
-      animation: wait 5s, fade-in-out 1.5s 5s;
+      animation: wait 3.5s, fade-in-out 0.9s 3.5s;
     }
 
     .msg-3 {
-      animation: wait 6.7s, msg-3 0.2s 6.7s;
+      animation: wait 4.69s, msg-3 0.2s 4.69s;
     }
 
     .typing-4 {
       opacity: 0;
-      animation: wait 7.5s, fade-in-out 1.5s 7.5s;
+      animation: wait 5.25s, fade-in-out 0.9s 5.25s;
     }
 
     .msg-4 {
-      animation: wait 9.2s, msg-4 0.2s 9.2s;
+      animation: wait 6.44s, msg-4 0.2s 6.44s;
     }
 
     .typing-5 {
       opacity: 0;
-      animation: wait 10s, fade-in-out 1.5s 10s;
+      animation: wait 7s, fade-in-out 0.9s 7s;
     }
 
     .msg-5 {
-      animation: wait 11.7s, msg-5 0.2s 11.7s;
+      animation: wait 8.19s, msg-5 0.2s 8.19s;
     }
 
     .typing-6 {
       opacity: 0;
-      animation: wait 12.5s, fade-in-out 1.5s 12.5s;
+      animation: wait 8.75s, fade-in-out 0.9s 8.75s;
     }
 
     .msg-6 {
-      animation: wait 14.2s, msg-6 0.2s 14.2s;
+      animation: wait 9.94s, msg-6 0.2s 9.94s;
     }
 
     @keyframes wait {
@@ -274,7 +274,7 @@
   <g transform="translate(10, 48)" class="msg-2">
     <rect width="439" height="66" rx="18" class="bubble" />
     <text x="15" y="27">I live in Bellevue, WA where it's supposed to be</text>
-    <text x="15" y="50">77° F (25° C) and <tspan class="emoji">🌥</tspan> today.</text>
+    <text x="15" y="50">77° F (25° C) and <tspan class="emoji">🌤</tspan> today.</text>
   </g>
 
   <!-- typing 3 -->
