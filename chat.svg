@@ -274,7 +274,7 @@
   <g transform="translate(10, 48)" class="msg-2">
     <rect width="439" height="66" rx="18" class="bubble" />
     <text x="15" y="27">I live in Bellevue, WA where it's supposed to be</text>
-    <text x="15" y="50">90° F (32° C) and <tspan class="emoji">🌥</tspan> today.</text>
+    <text x="15" y="50">91° F (33° C) and <tspan class="emoji">☀️</tspan> today.</text>
   </g>
 
   <!-- typing 3 -->
@@ -456,7 +456,7 @@
           data-testid="lang-progress"
           x="0"
           y="0"
-          width="164.85"
+          width="164.9"
           height="8"
           fill="#3178c6"
         />
@@ -464,9 +464,9 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="164.85"
+          x="164.9"
           y="0"
-          width="57.89"
+          width="57.86"
           height="8"
           fill="#f1e05a"
         />
@@ -474,9 +474,9 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="222.74"
+          x="222.76"
           y="0"
-          width="16.34"
+          width="16.33"
           height="8"
           fill="#f34b7d"
         />
@@ -484,7 +484,7 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="239.08"
+          x="239.08999999999997"
           y="0"
           width="16.17"
           height="8"
@@ -494,7 +494,7 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="245.25"
+          x="245.25999999999996"
           y="0"
           width="12.43"
           height="8"
@@ -504,7 +504,7 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="247.68"
+          x="247.68999999999997"
           y="0"
           width="12.32"
           height="8"
@@ -517,14 +517,14 @@
     <g class="gh-stagger" style="animation-delay: 450ms">
       <circle cx="5" cy="6" r="5" fill="#3178c6" />
       <text data-testid="lang-name" x="15" y="10" class="gh-lang-name">
-        TypeScript 65.94%
+        TypeScript 65.96%
       </text>
     </g>
   </g><g transform="translate(0, 25)">
     <g class="gh-stagger" style="animation-delay: 600ms">
       <circle cx="5" cy="6" r="5" fill="#f1e05a" />
       <text data-testid="lang-name" x="15" y="10" class="gh-lang-name">
-        JavaScript 23.16%
+        JavaScript 23.14%
       </text>
     </g>
   </g><g transform="translate(0, 50)">
