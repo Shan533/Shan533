@@ -274,7 +274,7 @@
   <g transform="translate(10, 48)" class="msg-2">
     <rect width="439" height="66" rx="18" class="bubble" />
     <text x="15" y="27">I live in Bellevue, WA where it's supposed to be</text>
-    <text x="15" y="50">81° F (27° C) and <tspan class="emoji">☀️</tspan> today.</text>
+    <text x="15" y="50">79° F (26° C) and <tspan class="emoji">☀️</tspan> today.</text>
   </g>
 
   <!-- typing 3 -->
@@ -456,7 +456,7 @@
           data-testid="lang-progress"
           x="0"
           y="0"
-          width="168.68"
+          width="168.67"
           height="8"
           fill="#3178c6"
         />
@@ -464,9 +464,9 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="168.68"
+          x="168.67"
           y="0"
-          width="54.04"
+          width="54.05"
           height="8"
           fill="#f1e05a"
         />
@@ -474,7 +474,7 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="222.72"
+          x="222.71999999999997"
           y="0"
           width="13.93"
           height="8"
@@ -484,7 +484,7 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="236.65"
+          x="236.64999999999998"
           y="0"
           width="15.79"
           height="8"
@@ -494,7 +494,7 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="242.44"
+          x="242.43999999999997"
           y="0"
           width="15.26"
           height="8"
@@ -504,7 +504,7 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="247.7"
+          x="247.69999999999996"
           y="0"
           width="12.29"
           height="8"
@@ -545,7 +545,7 @@
     <g class="gh-stagger" style="animation-delay: 600ms">
       <circle cx="5" cy="6" r="5" fill="#663399" />
       <text data-testid="lang-name" x="15" y="10" class="gh-lang-name">
-        CSS 2.11%
+        CSS 2.10%
       </text>
     </g>
   </g><g transform="translate(0, 50)">
