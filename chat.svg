@@ -274,7 +274,7 @@
   <g transform="translate(10, 48)" class="msg-2">
     <rect width="439" height="66" rx="18" class="bubble" />
     <text x="15" y="27">I live in Bellevue, WA where it's supposed to be</text>
-    <text x="15" y="50">64° F (18° C) and <tspan class="emoji">☁️</tspan> today.</text>
+    <text x="15" y="50">64° F (18° C) and <tspan class="emoji">🌦</tspan> today.</text>
   </g>
 
   <!-- typing 3 -->
@@ -456,7 +456,7 @@
           data-testid="lang-progress"
           x="0"
           y="0"
-          width="200.09"
+          width="199.82"
           height="8"
           fill="#3178c6"
         />
@@ -464,9 +464,9 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="200.09"
+          x="199.82"
           y="0"
-          width="21.48"
+          width="21.45"
           height="8"
           fill="#f1e05a"
         />
@@ -474,9 +474,9 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="221.57"
+          x="221.26999999999998"
           y="0"
-          width="16.78"
+          width="17.09"
           height="8"
           fill="#3572A5"
         />
@@ -484,9 +484,9 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="238.35"
+          x="238.35999999999999"
           y="0"
-          width="15.58"
+          width="15.57"
           height="8"
           fill="#f34b7d"
         />
@@ -494,9 +494,9 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="243.93"
+          x="243.92999999999998"
           y="0"
-          width="13.76"
+          width="13.75"
           height="8"
           fill="#336790"
         />
@@ -504,7 +504,7 @@
         <rect
           mask="url(#rect-mask)"
           data-testid="lang-progress"
-          x="247.69"
+          x="247.67999999999998"
           y="0"
           width="12.32"
           height="8"
@@ -517,21 +517,21 @@
     <g class="gh-stagger" style="animation-delay: 450ms">
       <circle cx="5" cy="6" r="5" fill="#3178c6" />
       <text data-testid="lang-name" x="15" y="10" class="gh-lang-name">
-        TypeScript 80.03%
+        TypeScript 79.93%
       </text>
     </g>
   </g><g transform="translate(0, 25)">
     <g class="gh-stagger" style="animation-delay: 600ms">
       <circle cx="5" cy="6" r="5" fill="#f1e05a" />
       <text data-testid="lang-name" x="15" y="10" class="gh-lang-name">
-        JavaScript 8.59%
+        JavaScript 8.58%
       </text>
     </g>
   </g><g transform="translate(0, 50)">
     <g class="gh-stagger" style="animation-delay: 750ms">
       <circle cx="5" cy="6" r="5" fill="#3572A5" />
       <text data-testid="lang-name" x="15" y="10" class="gh-lang-name">
-        Python 6.71%
+        Python 6.84%
       </text>
     </g>
   </g></g><g transform="translate(150, 0)"><g transform="translate(0, 0)">
